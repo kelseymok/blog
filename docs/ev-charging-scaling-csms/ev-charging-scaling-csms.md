@@ -3,7 +3,10 @@
 # EV Charging: Scaling a CSMS
 The European Parliament voted in February 2023 to approve a new law banning the sale of petrol and diesel cars from 2035 which will likely accelerate the sales of Electric Vehicles (EVs) in Europe and put existing Charging Networks under pressure to deliver energy to the upsurge of EV drivers. Having sufficient infrastructure and delivering a delightful charging experience will be key to fast adoption of EVs, but it is difficult to get right with Charge Point Operators (CPOs) at varying levels of technological maturity. Only the most resilient and adaptable CPOs will survive in the next decade.
 
-The following is a collection of thoughts about how a turnkey component of a Charging Network, the Charge Station Management System (CSMS), might look like in order to scale. This article is separated into three parts: (1) an overview of the Open Charge Point Protocol (OCPP) and the necessary components involved in charging (2) a technological overview of the CSMS and some ideas with respect to application and infrastructural resiliency (3) how to leverage the CSMS data from both the operational and analytical perspectives and at scale.
+The following is a collection of thoughts about how a turnkey component of a Charging Network, the Charge Station Management System (CSMS), might look like in order to scale. This article is separated into three parts: 
+* [Part 1: The Open Charge Point Protocol](#part-1-the-open-charge-point-protocol). An overview of the Open Charge Point Protocol (OCPP) and the necessary components involved in charging
+* [Part 2: Technical Overview of the CSMS](#part-2-technical-overview-of-the-csms). A technological overview of the CSMS and some ideas with respect to application and infrastructural resiliency
+* [Part 3: Data Considerations](#part-3-data-considerations). How to leverage the CSMS data from both the operational and analytical perspectives and at scale.
 
 
 ## Part 1: The Open Charge Point Protocol
@@ -11,7 +14,7 @@ Overview of the Protocol and How it Works
 The most widely accepted protocol is called OCPP (Open Charge Point Protocol) which was developed by the [OCA (Open Charge Alliance)](https://www.openchargealliance.org/) and details the expected communication between a car and the charger, the charger and the charging network, the charging network to the charger, and the charger back to the car. Most charging networks are currently using OCPP 1.6 but there is a push for the adoption of OCPP 2.0.1 due to the introduction of additional safety features and a much more simplified charging experience via Plug-and-Charge. The USA has even gone as far as mandating OCPP 2.0.1 for the national standard, which will be an interesting challenge for CPOs (and quite an opportunity for software domain specialists who are familiar with both OCPP 2.0.1 and how to build resilient production software).
 
 This document will describe OCPP 1.6, rather than the newer OCPP 2.0.1, because, for the purposes of this document, it is conceptually simpler and many of the OCPP 1.6 messages are mostly a subset of those in 2.0.1. And even so, some details about the protocol are deliberately excluded to better assist the reader in understanding the protocol and its architectural concerns at the 10,000 ft view.
-
+ 
 In its simplest form, the charging use case is as follows:
 
 ![csms-10000-ft-view.png](./assets/csms-10000-ft-view.png)
@@ -52,7 +55,7 @@ In the simplest use case, a Charging Station initiates a charge and the event ge
 
 Some of the more advanced use cases involve setting Charging Profiles for customised charging experiences (e.g. “an EV owner wants to charge to 100% between 1:00 and 5:00 in order to take advantage of the night tariffs in order to save money”) and reserving a Charge Station, but this is deliberately excluded in this document for the sake of simplicity.
 
-## Part 2: Technical Overview
+## Part 2: Technical Overview of the CSMS
 ### The Basic Single-Node Solution
 Most basic CSMS implement a single-node application behind a load balancer in the cloud, backed by a postgres database which serves as both a data collector and Back Office database (with a parallel Back Office application that reads from that database). There are definitely limitations to this type of architecture, but let’s start here to get familiarised with what a basic CSMS looks like.
 
