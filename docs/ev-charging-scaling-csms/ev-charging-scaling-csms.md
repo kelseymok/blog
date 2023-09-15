@@ -137,6 +137,7 @@ In the following sections, we’ll take an example of JTBD from each Operational
 As seen in part 2, there are quite some considerations to achieve a reliable scaled charging experience and additionally, an unreliable charging experience could damage a CPO’s reputation and affect the network’s bottom line. CPO Customer Support departments are the first line of defence, fielding customer inquiries and issues, and often the second to know (behind the customer) that a Charge Station is having issues. For a successful interaction and resolution to occur, it is required that the Customer Support agents have most up-to-date information about a Charge Station. Data from StatusNotification Request Charge Station-initiated events should be enough to inform the Customer Support agent about the Charge Station in question.
 
 The following is an excerpt from the OCPP 1.6 official documentation from OCA (more details about the individual types can be found on their [website](https://www.openchargealliance.org/))
+
 | Field Name | Field Type | Cardinality | Description |
 | --- | --- | --- | --- |
 | connectorId | integer connectorId >= 0 | 1..1 | Required. The id of the connect for which the status is reported. Id '0' (zero) is used if the status is for the Charge Point main controller. |
@@ -147,7 +148,7 @@ The following is an excerpt from the OCPP 1.6 official documentation from OCA (m
 | vendorId | CiString255Type | 0..1 | Optional. This identifies the vendor-specific implementation. |
 | vendorErrorCode | CiString50Type | 0..1 | Optional. This contains the vendor-specific error code. |
 
-The StatusNotification Request in JSON:
+A sample StatusNotification Request in JSON:
 ```json
 {
    "connector_id": 3, 
