@@ -1,3 +1,5 @@
+> To the Reader: This article is under continuous revisement [learning]. If there's a section you'd like to learn about more in detail, let's start a conversation!
+
 # EV Charging: Scaling a CSMS
 The European Parliament voted in February 2023 to approve a new law banning the sale of petrol and diesel cars from 2035 which will likely accelerate the sales of Electric Vehicles (EVs) in Europe and put existing Charging Networks under pressure to deliver energy to the upsurge of EV drivers. Having sufficient infrastructure and delivering a delightful charging experience will be key to fast adoption of EVs, but it is difficult to get right with Charge Point Operators (CPOs) at varying levels of technological maturity. Only the most resilient and adaptable CPOs will survive in the next decade.
 
