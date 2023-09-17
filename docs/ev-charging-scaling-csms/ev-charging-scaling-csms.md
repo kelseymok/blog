@@ -1,4 +1,4 @@
-> To the Reader: This article is under continuous revisement [learning]. If there's a section you'd like to learn about more in detail, let's start a conversation!
+> To the Reader: This article is very much in draft state whose purpose is to narrate the E2E architecture of a CSMS from operational systems to data handling. This is under continuous revisement. Feedback welcome! Additionally, if you find a particular section interestion and would like elaboration, let's talk!
 
 # EV Charging: Scaling a CSMS
 The European Parliament voted in February 2023 to approve a new law banning the sale of petrol and diesel cars from 2035 which will likely accelerate the sales of Electric Vehicles (EVs) in Europe and put existing Charging Networks under pressure to deliver energy to the upsurge of EV drivers. Having sufficient infrastructure and delivering a delightful charging experience will be key to fast adoption of EVs, but it is difficult to get right with Charge Point Operators (CPOs) at varying levels of technological maturity. Only the most resilient and adaptable CPOs will survive in the next decade.
@@ -201,7 +201,7 @@ What we now have with these two scenarios is a picture of how both Operational a
 * A model trained in anomaly detection which automatically takes a Charge Station offline, automatically removes them from discovery maps, and automatically schedules a maintenance engineer
 * Predictive maintenance based on energy dispensed/usage/Status patterns per Charge Station to automatically take a Charge Station offline and schedule a maintenance engineer
 
-![csms-data-all-together-now.png](./assets/csms-data-all-together-now.png)
+![csms-data-all-together-now.png](./assets/csms-data-all-together-ml-feedback-loop.png)
 
 ### Additional Considerations
 #### Handling Data for Back Office Applications
